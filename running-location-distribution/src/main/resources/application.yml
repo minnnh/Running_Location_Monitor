@@ -1,0 +1,12 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: running-location-distribution
+  main:
+    allow-circular-references: true
+  cloud:
+    stream:
+      bindings:
+        output-out-0:
+          destination: locations

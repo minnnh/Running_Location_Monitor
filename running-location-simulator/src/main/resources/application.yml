@@ -1,0 +1,19 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: running-location-simulator
+  main:
+    allow-circular-references: true
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      myCircuit:
+        registerHealthIndicator: true
+        slidingWindowSize: 15
+        minimumNumberOfCalls: 10
+        failureRateThreshold: 50
+
+gpsSimmulator:
+  googleApiKey:

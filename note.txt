@@ -1,0 +1,19 @@
+Microservices
+running-location-service
+port: 9000
+
+supply-location-service
+port: 9001
+
+running-location-simulator
+port: 9005
+
+running-location-distribution
+port: 9006
+
+running-location-updater:
+port: 9007
+
+platform
+    eureka
+        port: 8671

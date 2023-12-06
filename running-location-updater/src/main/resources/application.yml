@@ -1,0 +1,22 @@
+server:
+  port: 9007
+spring:
+  application:
+    name: running-location-updater
+  cloud:
+    stream:
+      bindings:
+        input-in-0:
+          destination: locations
+
+  main:
+    allow-circular-references: true
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      myCircuit:
+        registerHealthIndicator: true
+        slidingWindowSize: 15
+        minimumNumberOfCalls: 10
+        failureRateThreshold: 50
