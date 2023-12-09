@@ -101,7 +101,7 @@ docker-compose up
 ```
 
 ## Todo List
-### services
+### Services
 - [x] __running-location-service__
   - [x] main
   - [x] test
