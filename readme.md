@@ -1,6 +1,16 @@
 # Running Location Monitoring System
 The Real-time Running Location Monitoring System is a Java-based project that utilizes Spring Boot, Spring Data, Spring Cloud, RabbitMQ, and MongoDB. Employing a Microservices architecture, the project separates backend services for running location persistence, distribution, and updates. This results in a flexible and scalable solution for the real-time tracking of running locations.
 
+## Demo
+1. Start simulation with __running-location-simulator__, and send the data to __running-location-distribution__
+![img](./img/simulator.png)
+2. Check the service registration and discovery with __Eureka__
+![img](./img/eureka.png)
+3. Subscribe the "locations" updates with __running-location-updater__
+![img](./img/updater.png)
+4. Check the status through RabbitMQ
+![img](./img/rabbitmq.png)
+
 ## Environment
 - Java 8
 - Maven 3
@@ -54,15 +64,11 @@ __Tools__: Git, Docker, IntelliJ IDEA
 - __running-location-distribution__ -> __RabbitMQ (Channel, Queue)__ -> __running-location-updater__ 
 - __running-location-updater__ -> __WebSocket (Queue, Stream)__ -> __client (subscribers)__
 
-## Demo
+## Work
 1. Start simulation with __running-location-simulator__, and send the data to __running-location-distribution__
-![img](./img/simulator.png)
 2. Check the service registration and discovery with __Eureka__
-![img](./img/eureka.png)
 3. Subscribe the "locations" updates with __running-location-updater__
-![img](./img/updater.png)
 4. Check the status through RabbitMQ
-![img](./img/rabbitmq.png)
 
 ## Getting Started
 To get started with the Running Location Monitoring System, follow these steps:
